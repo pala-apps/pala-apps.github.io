@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Your awesome title</title>
+  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://example.com/">
+  <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="http://example.com/feed.xml">
+</head>
+  <body>
+
+    {% include header.html %}
+
+    <div class="container">
+
+      <!--Main content-->
+      <div class="row">
+        <div class="col-md-8">
+        	<!--Blog entry-->
+      		<div class="panel panel-default">
+      		  <div class="panel-heading blog-meta">
+    		  		By <span class="author-meta"><b>{{ page.author }}</b></span>
+    		  		on <span class="date-meta"><em>{{ page.date }}</em></span>
+      		  	<div class="pull-right">
+              </div>
+      		  </div>
+      		  <div class="panel-body blog-entry">
+      		    <h2>{{ page.title }}</h2>
+              {{ content }}
+      		  </div>
+      		</div>
+        </div>
+        <div class="col-md-4">
+        	<!--Sidebar content-->
+        	<div class="sidebar">
+      		  <h4>Latest Posts</h4>
+            {% for post in site.posts limit:3 %}
+            <div class="media">
+              <div class="media-body media-body-meta">
+                <h4 class="media-heading"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
+                By <span class="author-meta">{{ post.author }}</span>
+                on <span class="date-meta"><em>{{ post.date }}</em></span>
+              </div>
+            </div>
+            <hr>
+            {% endfor %}
+
+        	</div>
+        	<!--End sidebar content-->
+        </div>
+      </div>
+      <!--End main content-->
+
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+</html>

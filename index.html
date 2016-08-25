@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="row">
+
+    {% for post in site.posts %}
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <!-- <div class="panel-body-img">
+            <img width="100%" src="img/home1.jpg" class="img-responsive" />
+              <p class="pull-left">{{ post.title | escape }}</p>
+              <p class="pull-right"></p>
+          </div> -->
+          <div class="panel-body-content">
+            <h3>{{ post.title | escape }}</h3>
+            <span class="tag">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <p>{{ post.excerpt }}</p>
+            <a  class="read-more" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+            <hr>
+            <span class="icon-export" aria-hidden="true"></span><span class="blog-count">6</span>
+            <span class="icon-comment-alt" aria-hidden="true"></span><span class="blog-count">3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+</div>
