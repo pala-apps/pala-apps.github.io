@@ -24,4 +24,3 @@ url: "http://example.com" # the base hostname & protocol for your site
 # Build settings
 markdown: kramdown
 theme: minima
-exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor']
