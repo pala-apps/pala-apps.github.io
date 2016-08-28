@@ -1,4 +1,5 @@
 
 .icon-right-open-big:before { content: '\e800'; } /* '' */
+.icon-menu:before { content: '\e801'; } /* '' */
 .icon-github-circled-alt2:before { content: '\f056'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */

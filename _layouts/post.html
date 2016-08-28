@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Your awesome title</title>
-  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
+    <title>PALA</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search resu...">
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://example.com/">
-  <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="http://example.com/feed.xml">
-</head>
+    <link rel="stylesheet" href="/fontello/css/fontello.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="canonical" href="http://example.com/">
+    <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="http://example.com/feed.xml">
+  </head>
   <body>
 
     {% include header.html %}
@@ -24,66 +25,73 @@
         <div class="col-md-8">
         	<!--Blog entry-->
       		<div class="panel panel-default">
-      		  <div class="panel-heading blog-meta">
-    		  		By <span class="author-meta"><b>{{ page.author }}</b></span>
-    		  		on <span class="date-meta"><em>{{ page.date | date: "%B %-d, %Y" }}</em></span>
-      		  	<div class="pull-right">
+      		  <div class="panel-body blog-entry">
+              <div class="panel-heading blog-meta">
+                By <span class="author-meta"><b>{{ page.author }}</b></span>
+                on <span class="date-meta"><em>{{ page.date | date: "%B %-d, %Y" }}</em></span>
+              </div>
+              <div class="panel-body-content">
+                <h1 class="panel-title">{{ page.title }}</h1>
+                {{ content }}
+              </div>
+              <div class="panel-body-footer">
+
+                <div id="disqus_thread"></div>
+                <script>
+
+                /**
+                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+                /*
+                var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = '//progressive-1.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
               </div>
       		  </div>
-      		  <div class="panel-body blog-entry">
-      		    <h2>{{ page.title }}</h2>
-              {{ content }}
-      		  </div>
-      		</div>
-
-          <div id="disqus_thread"></div>
-          <script>
-
-          /**
-           *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-           *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
-          /*
-          var disqus_config = function () {
-              this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-              this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-          };
-          */
-          (function() { // DON'T EDIT BELOW THIS LINE
-              var d = document, s = d.createElement('script');
-              s.src = '//progressive-1.disqus.com/embed.js';
-              s.setAttribute('data-timestamp', +new Date());
-              (d.head || d.body).appendChild(s);
-          })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
+      		</div><!-- End blog entry -->
 
         </div>
         <div class="col-md-4">
         	<!--Sidebar content-->
-        	<div class="sidebar">
+        	<aside class="sidebar">
       		  <h4>Latest Posts</h4>
             {% for post in site.posts limit:3 %}
             <div class="media">
-              <div class="media-body media-body-meta">
+              <div class="media-body">
                 <h4 class="media-heading"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
-                By <span class="author-meta">{{ post.author }}</span>
-                on <span class="date-meta"><em>{{ post.date }}</em></span>
+                <div class="media-body-meta">
+                  By <span class="author-meta">{{ post.author }}</span>
+                  on <span class="date-meta"><em>{{ post.date }}</em></span>
+                </div>
               </div>
             </div>
             <hr>
             {% endfor %}
 
-        	</div>
+        	</aside>
         	<!--End sidebar content-->
         </div>
       </div>
       <!--End main content-->
 
     </div>
-
     {% include footer.html %}
 
+
+    <script type="text/javascript" src="/js/app.js"></script>
   </body>
 </html>
