@@ -1,12 +1,19 @@
 ---
 layout: post
-author: Jay Chetty
-title:  "Welcome to Jekyll!"
+author: Rick Henry
+title:  "Saving Video Files in PouchDB"
 date:   2016-08-25 20:12:07 +0100
 tags:
-  - jekyll
-  - update
+  - PouchDB
+  - JavaScript
 ---
+
+Working on a project recently which required me to persist video files to PouchDB. There wasn't much documentation or blogs on it so here goes. It's actually super simple. Here's a step by step guide.
+
+What you need:
+
+- Node
+
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.

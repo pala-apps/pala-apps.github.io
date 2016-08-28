@@ -3,24 +3,38 @@
 ---
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
-/*COLORS*/
-/* FONTS */
-/*CUSTOM STYLES*/
+@import 'https://fonts.googleapis.com/css?family=Lora';
+
 .dropdown .icon-down-open-big, .icon-search {
   font-size: 11px;
 }
 
 .brand {
   font-family: "Montserrat", sans-serif;
+  margin-right: 15px;
   padding: 20px 0;
   font-size: 40px;
+  line-height: 56px;
+  margin-left: 15px;
   text-transform: uppercase;
   text-align: center;
   color: #434a54;
 }
 
+.brand:hover {
+  color: #434a54;
+}
+
+@media (min-width: 768px) {
+  .brand {
+    line-height: 80px;
+    margin-left: 0px;
+  }
+}
+
 .panel-body-img {
   position: relative;
+  padding: 20px;
 }
 
 .panel-body-img p.pull-left {
@@ -46,6 +60,14 @@
   font-weight: 100;
 }
 
+.tag-small {
+  padding: 2px 5px;
+  font-size: 13px;
+  background: transparent;
+  border: 1px solid rgba(67, 74, 84, 0.5);
+  color: rgba(67, 74, 84, 0.5);
+}
+
 .shop-tag {
   padding: 3px 8px;
   color: white;
@@ -59,6 +81,12 @@
   padding-right: 15px;
   padding-bottom: 15px;
   padding-left: 15px;
+}
+
+.panel-body-content p {
+  font-family: 'Lora', serif;
+  font-size: 17px;
+  line-height: 26px;
 }
 
 .panel-body-content h1, h2, h3 {
@@ -150,6 +178,18 @@ footer p {
 
 .blog-entry {
   padding: 0 20px 15px 20px;
+}
+
+.blog-entry p {
+  font-family: 'Lora', serif;
+  font-size: 19px;
+  line-height: 34px;
+  font-weight: 100;
+  margin-bottom: 35px;
+}
+
+.blog-entry h2 {
+  font-family: 'Open Sans', serif;
 }
 
 .blog-entry img {
@@ -1865,7 +1905,7 @@ a.bg-danger:hover {
 ul,
 ol {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 35px;
 }
 
 ul ul,
@@ -5394,6 +5434,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #707c8d;
   text-transform: uppercase;
   font-size: 12px;
+  line-height: 68px;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
@@ -5440,6 +5481,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 @media (max-width: 767px) {
+  .navbar-default .navbar-nav > li > a {
+    line-height: 26px;
+  }
+
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #707c8d;
   }
@@ -6709,6 +6754,11 @@ a.list-group-item-danger.active:focus {
 
 .panel-default {
   border-color: #d0d0d0;
+}
+
+.panel-borderless {
+  border-radius: 0px;
+  border-color: transparent;
 }
 
 .panel-default > .panel-heading {
