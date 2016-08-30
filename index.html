@@ -3,28 +3,75 @@ layout: default
 ---
 
 <div class="container">
-  <div class="row">
-    {% for post in site.posts %}
-    <div class="col-md-3 col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="panel-body-content">
-            <h2>
-              <a class="panel-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
-            </h2>
-            <div class="small"><em>{{ post.date | date: "%B %-d, %Y" }}</em></div>
-            <p>{{ post.content | strip_html | truncatewords:20 }}</p>
+  {% for post in site.posts %}
+    {% assign loopindex = forloop.index | modulo:4 %}
+    {% if loopindex == 1 %}
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="panel-body-content">
+                <h2>
+                  <a class="panel-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+                </h2>
+                <div class="small"><em>{{ post.date | date: "%B %-d, %Y" }}</em></div>
+                <p>{{ post.content | strip_html | truncatewords:20 }}</p>
+              </div>
+              <div class="panel-body-footer">
+                {% for tag in post.tags %}
+                  <span class="tag tag-small">{{ tag }}</span>
+                {% endfor %}
+                <hr>
+                <a  class="btn btn-default" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+              </div>
+            </div>
           </div>
-          <div class="panel-body-footer">
-            {% for tag in post.tags %}
-              <span class="tag tag-small">{{ tag }}</span>
-            {% endfor %}
-            <hr>
-            <a  class="btn btn-default" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+        </div>
+    {% endif %}
+    {% if loopindex == 0 %}
+        <div class="col-md-3 col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="panel-body-content">
+                <h2>
+                  <a class="panel-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+                </h2>
+                <div class="small"><em>{{ post.date | date: "%B %-d, %Y" }}</em></div>
+                <p>{{ post.content | strip_html | truncatewords:20 }}</p>
+              </div>
+              <div class="panel-body-footer">
+                {% for tag in post.tags %}
+                  <span class="tag tag-small">{{ tag }}</span>
+                {% endfor %}
+                <hr>
+                <a  class="btn btn-default" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    {% endfor %}
-  </div>
+    {% endif %}
+    {% if loopindex == 2 or loopindex == 3 %}
+      <div class="col-md-3 col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="panel-body-content">
+              <h2>
+                <a class="panel-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+              </h2>
+              <div class="small"><em>{{ post.date | date: "%B %-d, %Y" }}</em></div>
+              <p>{{ post.content | strip_html | truncatewords:20 }}</p>
+            </div>
+            <div class="panel-body-footer">
+              {% for tag in post.tags %}
+                <span class="tag tag-small">{{ tag }}</span>
+              {% endfor %}
+              <hr>
+              <a  class="btn btn-default" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
