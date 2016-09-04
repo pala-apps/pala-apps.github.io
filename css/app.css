@@ -12,6 +12,8 @@ Buttons
 Blogs ( blog-meta )
 Medias
 Logo
+Forms
+Lists & Dropdowns
 */
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
@@ -797,7 +799,6 @@ footer {
 }
 
 .navbar-nav {
-  border-top: 1px solid #F9F9F9;
   margin: 0px -15px;
   background-color: #FFFFFF;
   list-style: none;
@@ -863,7 +864,7 @@ footer {
   .navbar-nav {
     float: left;
     margin: 0px 28px;
-    line-height: 115px;
+    line-height: 80px;
   }
 
   .nav {
@@ -1049,11 +1050,13 @@ footer {
 /* Logo */
 
 .logo-wrapper {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 80px;
   position: relative;
-  margin-bottom: 15px;
+  margin: 4px 0;
+}
+
+.logo-wrapper a img {
+  width: 100%;
 }
 
 .mtn {
@@ -1211,6 +1214,47 @@ footer {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 9px solid #8cc152;
+}
+
+/* forms */
+
+.text-input-search {
+  height: 35px;
+  border-radius: 20px;
+  border: 1px solid #e5e5e5;
+  padding-left: 15px;
+  outline: 0;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.text-input-search:hover,
+.text-input-search:focus {
+  border: 1px solid #37bc9b;
+}
+
+.text-input-search::after {
+  content: 'hello';
+  width: 20px;
+  height: 20px;
+  color: red;
+}
+
+/* Lists and Dropdowns */
+
+.dropdown {
+  position: absolute;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+  padding-left: 0px;
+}
+
+.dropdown li a {
+  width: 100%;
+  line-height: auto;
 }
 
 /* STATE STYLES */
