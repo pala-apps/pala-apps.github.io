@@ -29,6 +29,12 @@
       "css": "menu",
       "code": 59393,
       "src": "typicons"
+    },
+    {
+      "uid": "9725db89b610135dc76cd8a21afffa83",
+      "css": "search",
+      "code": 59394,
+      "src": "linecons"
     }
   ]
 }
