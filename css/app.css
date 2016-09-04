@@ -845,7 +845,7 @@ footer {
   background-color: transparent;
   background-image: none;
   border: none;
-  line-height: 115px;
+  line-height: 80px;
   padding: 0px;
   font-size: 22px;
   cursor: pointer;
@@ -1050,6 +1050,7 @@ footer {
 /* Logo */
 
 .logo-wrapper {
+  display: inline-block;
   width: 80px;
   position: relative;
   margin: 4px 0;
